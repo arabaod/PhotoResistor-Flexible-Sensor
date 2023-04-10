@@ -22,12 +22,28 @@ Explore this concept more at this link: https://electronics.stackexchange.com/qu
 I encountered issues with the consistency in the LED brightness due to the resistor I used for the flex sensor. I used a 1M ohm resistor (due to availability) instead of the 47k ohm resistor that is suggested for use. So, when the photoresistor senses low light and the LED goes bright, the LED either stays bright or becomes very dim. The adjustment process is very abrupt. Also, there is a delay between sensing dark mode and light mode. Patience is key.
 
 ## Future Features
-I hope to add an outer casing and more LEDs to make the night light official.
+I hope to add an outer casing and more LEDs to make the night light more enticing to a younger audience.
 
-## Installation - ...
-If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
+## Installation Instructions w/AVR Toolchain
+Please follow the instructions on the following link to download and install the AVRDUDE to your OS, perferably a Windows system for ease of use.
 
-Provide a step-by-step description of how to get the development environment set and running.
+Link: https://tinusaur.com/guides/avr-gcc-toolchain/
+
+Please use your command prompt to type these three commands to check if you have installed the software correctly:
+
+avr-gcc -v
+avrdude -v
+avr-objcopy -V
+
+### Compilation Process
+* Change the directory on your command prompt to where you have downloaded the source code file.
+* Check the COM port on which your Arduino is programmed.
+* Type: c:\avr-gcc-11.1.0\bin\avr-gcc.exe -Os -DF_CPU=16000000UL -mmcu=atmega328p -c -o nightlight.o nighlight.c
+* Type: c:\avr-gcc-11.1.0\bin\avr-gcc.exe -mmcu=atmega328p nightlight.o -o nightlight
+* Type: c:\avr-gcc-11.1.0\bin\avr-objcopy.exe -O ihex -R .eeprom nightlight nightlight.hex
+* Type: c:\avr-gcc-11.1.0\bin\avrdude.exe -patmega328p -Pcom(port#) -carduino -D -U flash:w:nightlight.hex:i
+
+These instructions may differ by version or if you have decided to use a different microcontroller than an Arduino UNO Rev 3.
 
 ## Using the Night Light
 After installation and applying power to the Arduino, the LED should automatically be on, but dim. You can activate dark mode by covering the photoresistor with any opaque object which will brighten the LED. In dark mode, you can begin to wrap the flex sensor to adjust the brightness.
@@ -43,7 +59,7 @@ Link: https://www.digikey.com/en/maker/blogs/2022/how-to-use-a-phototransistor-w
 Link: https://youtu.be/2uOLE6uXoPU
 
 ## Items Needed
-* Arduino Microcontroller
+* Arduino UNO Rev3 Microcontroller
 * Arduino USB cable
 * 1 Photoresistor
 * 1 Flex Sensor
