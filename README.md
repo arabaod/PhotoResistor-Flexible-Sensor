@@ -19,7 +19,7 @@ The above schematic shows a voltage divider. Ignore the resistor, R5. At first, 
 Explore this concept more at this link: https://electronics.stackexchange.com/questions/101085/reversing-a-photoresistor
 
 ## Challenges
-I encountered issues with the consistency in the LED brightness due to the resistor I used for the flex sensor. I used a 1M ohm resistor (due to availability) instead of the 47k ohm resistor that is suggested for use. So, when the photoresistor senses low light and the LED goes bright, the LED either stays bright or becomes very dim. The adjustment process is very abrupt. Also, there is a delay between sensing dark mode and light mode. Patience is key.
+I encountered issues with the consistency in the LED brightness due to the resistor I used for the flex sensor. I used a 1M ohm resistor (due to availability) instead of the 47k ohm resistor that is suggested for use. So, when the photoresistor senses low light and the LED goes bright, the LED either stays bright or becomes very dim. The adjustment process is very abrupt. Also, there is a delay between sensing dark mode and light mode. Patience is key. Another obstacle was trying to break down the Arduino analogRead function to low level C language that can be read by avrdude.
 
 ## Future Features
 I hope to add an outer casing and more LEDs to make the night light more enticing to a younger audience.
@@ -67,3 +67,6 @@ Link: https://youtu.be/2uOLE6uXoPU
 * 1 LED
 * 1 100k ohm Resistor
 * 6 wires
+
+## Quick Pic
+![20230410_051254](https://user-images.githubusercontent.com/89606106/230872110-2a5a1332-44a5-4360-b48f-2ee5660aeb13.jpg)
