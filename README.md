@@ -65,5 +65,5 @@ Link: https://youtu.be/2uOLE6uXoPU
 * 1 Flex Sensor
 * 2 10k ohm Resistors
 * 1 LED
-* 1 1M ohm Resistor
+* 1 100k ohm Resistor
 * 6 wires
